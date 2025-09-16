@@ -1,0 +1,210 @@
+Grammar
+
+    0 $accept: grammar_input $end
+
+    1 grammar_input: rules
+
+    2 rules: ε
+    3      | rules rule
+
+    4 rule: NON_TERMINAL ARROW productions SEMICOLON
+
+    5 productions: production
+    6            | productions PIPE production
+
+    7 production: ε
+    8           | symbol_sequence
+
+    9 symbol_sequence: symbol
+   10                | symbol_sequence symbol
+
+   11 symbol: NON_TERMINAL
+   12       | TERMINAL
+
+
+Terminals, with rules where they appear
+
+    $end (0) 0
+    error (256)
+    NON_TERMINAL <str> (258) 4 11
+    TERMINAL <str> (259) 12
+    ARROW (260) 4
+    PIPE (261) 6
+    SEMICOLON (262) 4
+
+
+Nonterminals, with rules where they appear
+
+    $accept (8)
+        on left: 0
+    grammar_input (9)
+        on left: 1
+        on right: 0
+    rules (10)
+        on left: 2 3
+        on right: 1 3
+    rule (11)
+        on left: 4
+        on right: 3
+    productions (12)
+        on left: 5 6
+        on right: 4 6
+    production <str> (13)
+        on left: 7 8
+        on right: 5 6
+    symbol_sequence <str> (14)
+        on left: 9 10
+        on right: 8 10
+    symbol <str> (15)
+        on left: 11 12
+        on right: 9 10
+
+
+State 0
+
+    0 $accept: • grammar_input $end
+
+    $default  reduce using rule 2 (rules)
+
+    grammar_input  go to state 1
+    rules          go to state 2
+
+
+State 1
+
+    0 $accept: grammar_input • $end
+
+    $end  shift, and go to state 3
+
+
+State 2
+
+    1 grammar_input: rules •
+    3 rules: rules • rule
+
+    NON_TERMINAL  shift, and go to state 4
+
+    $default  reduce using rule 1 (grammar_input)
+
+    rule  go to state 5
+
+
+State 3
+
+    0 $accept: grammar_input $end •
+
+    $default  accept
+
+
+State 4
+
+    4 rule: NON_TERMINAL • ARROW productions SEMICOLON
+
+    ARROW  shift, and go to state 6
+
+
+State 5
+
+    3 rules: rules rule •
+
+    $default  reduce using rule 3 (rules)
+
+
+State 6
+
+    4 rule: NON_TERMINAL ARROW • productions SEMICOLON
+
+    NON_TERMINAL  shift, and go to state 7
+    TERMINAL      shift, and go to state 8
+
+    $default  reduce using rule 7 (production)
+
+    productions      go to state 9
+    production       go to state 10
+    symbol_sequence  go to state 11
+    symbol           go to state 12
+
+
+State 7
+
+   11 symbol: NON_TERMINAL •
+
+    $default  reduce using rule 11 (symbol)
+
+
+State 8
+
+   12 symbol: TERMINAL •
+
+    $default  reduce using rule 12 (symbol)
+
+
+State 9
+
+    4 rule: NON_TERMINAL ARROW productions • SEMICOLON
+    6 productions: productions • PIPE production
+
+    PIPE       shift, and go to state 13
+    SEMICOLON  shift, and go to state 14
+
+
+State 10
+
+    5 productions: production •
+
+    $default  reduce using rule 5 (productions)
+
+
+State 11
+
+    8 production: symbol_sequence •
+   10 symbol_sequence: symbol_sequence • symbol
+
+    NON_TERMINAL  shift, and go to state 7
+    TERMINAL      shift, and go to state 8
+
+    $default  reduce using rule 8 (production)
+
+    symbol  go to state 15
+
+
+State 12
+
+    9 symbol_sequence: symbol •
+
+    $default  reduce using rule 9 (symbol_sequence)
+
+
+State 13
+
+    6 productions: productions PIPE • production
+
+    NON_TERMINAL  shift, and go to state 7
+    TERMINAL      shift, and go to state 8
+
+    $default  reduce using rule 7 (production)
+
+    production       go to state 16
+    symbol_sequence  go to state 11
+    symbol           go to state 12
+
+
+State 14
+
+    4 rule: NON_TERMINAL ARROW productions SEMICOLON •
+
+    $default  reduce using rule 4 (rule)
+
+
+State 15
+
+   10 symbol_sequence: symbol_sequence symbol •
+
+    $default  reduce using rule 10 (symbol_sequence)
+
+
+State 16
+
+    6 productions: productions PIPE production •
+
+    $default  reduce using rule 6 (productions)

@@ -1340,11 +1340,11 @@ void print_tree(Node* node, int level) {
     if (!node) {
         return;
     }
-    printf("|");
+    
     for (int i = 0; i < level; i++) {
         printf("    |");
     }
-    printf("-- %s\n", node->token);
+    printf("__ %s\n", node->token);
     print_tree(node->left, level + 1);
     print_tree(node->right, level + 1);
 }
@@ -1356,6 +1356,7 @@ int main() {
 
     if (root) {
         printf("\n--- Parse Tree ---\n");
+        printf("|");
         print_tree(root, 0);
     }
     return 0;

@@ -351,8 +351,8 @@ static void yynoreturn yy_fatal_error ( const char* msg  );
 	(yy_hold_char) = *yy_cp; \
 	*yy_cp = '\0'; \
 	(yy_c_buf_p) = yy_cp;
-#define YY_NUM_RULES 3
-#define YY_END_OF_BUFFER 4
+#define YY_NUM_RULES 8
+#define YY_END_OF_BUFFER 9
 /* This struct is not used in this scanner,
    but its presence is necessary. */
 struct yy_trans_info
@@ -360,27 +360,28 @@ struct yy_trans_info
 	flex_int32_t yy_verify;
 	flex_int32_t yy_nxt;
 	};
-static const flex_int16_t yy_accept[8] =
+static const flex_int16_t yy_accept[17] =
     {   0,
-        0,    0,    4,    2,    1,    1,    0
+        0,    0,    9,    7,    5,    6,    3,    2,    4,    1,
+        5,    0,    2,    1,    2,    0
     } ;
 
 static const YY_CHAR yy_ec[256] =
     {   0,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    2,
+        1,    1,    1,    1,    1,    1,    1,    1,    2,    3,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    3,    3,    3,    3,    3,    3,
-        3,    3,    3,    3,    3,    3,    3,    3,    3,    3,
-        3,    3,    3,    3,    3,    3,    3,    3,    3,    3,
-        1,    1,    1,    1,    1,    1,    3,    3,    3,    3,
+        1,    2,    1,    1,    1,    1,    4,    1,    1,    4,
+        4,    4,    4,    1,    4,    5,    4,    6,    6,    6,
+        6,    6,    6,    6,    6,    6,    6,    1,    1,    1,
+        7,    1,    1,    1,    8,    8,    8,    8,    8,    8,
+        8,    8,    8,    8,    8,    8,    8,    8,    8,    8,
+        8,    8,    8,    8,    8,    8,    8,    8,    8,    8,
+        4,    1,    4,    1,    8,    1,    8,    8,    8,    8,
 
-        3,    3,    3,    3,    3,    3,    3,    3,    3,    3,
-        3,    3,    3,    3,    3,    3,    3,    3,    3,    3,
-        3,    3,    1,    1,    1,    1,    1,    1,    1,    1,
+        8,    8,    8,    8,    8,    8,    8,    8,    8,    8,
+        8,    8,    8,    8,    8,    8,    8,    8,    8,    8,
+        8,    8,    4,    1,    4,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -397,29 +398,35 @@ static const YY_CHAR yy_ec[256] =
         1,    1,    1,    1,    1
     } ;
 
-static const YY_CHAR yy_meta[4] =
+static const YY_CHAR yy_meta[9] =
     {   0,
-        1,    1,    2
+        1,    1,    1,    1,    1,    2,    1,    2
     } ;
 
-static const flex_int16_t yy_base[9] =
+static const flex_int16_t yy_base[18] =
     {   0,
-        0,    0,    5,    6,    0,    0,    6,    2
+        0,    0,   16,   17,   13,   17,   17,    4,   17,    0,
+       12,    7,    0,    0,    6,   17,    9
     } ;
 
-static const flex_int16_t yy_def[9] =
+static const flex_int16_t yy_def[18] =
     {   0,
-        7,    1,    7,    7,    8,    8,    0,    7
+       16,    1,   16,   16,   16,   16,   16,   16,   16,   17,
+       16,   16,    8,   17,   16,    0,   16
     } ;
 
-static const flex_int16_t yy_nxt[10] =
+static const flex_int16_t yy_nxt[26] =
     {   0,
-        4,    4,    5,    6,    7,    3,    7,    7,    7
+        4,    5,    6,    7,    4,    8,    9,   10,   12,   13,
+       14,   15,   15,   11,   11,   16,    3,   16,   16,   16,
+       16,   16,   16,   16,   16
     } ;
 
-static const flex_int16_t yy_chk[10] =
+static const flex_int16_t yy_chk[26] =
     {   0,
-        1,    1,    1,    8,    3,    7,    7,    7,    7
+        1,    1,    1,    1,    1,    1,    1,    1,    8,    8,
+       17,   15,   12,   11,    5,    3,   16,   16,   16,   16,
+       16,   16,   16,   16,   16
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -436,18 +443,41 @@ int yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "replace.l"
-#line 2 "replace.l"
+#line 1 "arithmetic.l"
+/* Write a program Using flex to recognise a valid arithmetic 
+expression and to recognise the identifiers and operators present */
+#line 5 "arithmetic.l"
 #include <stdio.h>
 #include <string.h>
-#include <ctype.h>
+#include <stdlib.h>
 
-int count = 0;
-char find_word[50];
-char replace_word[50];
-FILE *input_file = NULL;
-#line 450 "lex.yy.c"
-#line 451 "lex.yy.c"
+char identifiers[100][100];
+char operators[100][5];
+char numbers[100][50];
+int id_count = 0;
+int op_count = 0;
+int num_count = 0;
+int valid_expression = 1;
+
+void add_unique_identifier(char *ident) {
+    for (int i = 0; i < id_count; i++) {
+        if (strcmp(identifiers[i], ident) == 0) {
+            return; // Already exists
+        }
+    }
+    strcpy(identifiers[id_count++], ident);
+}
+
+void add_unique_operator(char *op) {
+    for (int i = 0; i < op_count; i++) {
+        if (strcmp(operators[i], op) == 0) {
+            return; // Already exists
+        }
+    }
+    strcpy(operators[op_count++], op);
+}
+#line 480 "lex.yy.c"
+#line 481 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -664,10 +694,9 @@ YY_DECL
 		}
 
 	{
-#line 12 "replace.l"
+#line 42 "arithmetic.l"
 
-
-#line 671 "lex.yy.c"
+#line 700 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -694,13 +723,13 @@ yy_match:
 			while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 				{
 				yy_current_state = (int) yy_def[yy_current_state];
-				if ( yy_current_state >= 8 )
+				if ( yy_current_state >= 17 )
 					yy_c = yy_meta[yy_c];
 				}
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 6 );
+		while ( yy_base[yy_current_state] != 17 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -726,28 +755,63 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 14 "replace.l"
-{   // Match any word (sequence of letters)
-    if (strcmp(yytext, find_word) == 0) {
-        count++;
-        printf("%s", replace_word);
-    } else {
-        printf("%s", yytext);
-    }
+#line 43 "arithmetic.l"
+{
+    add_unique_identifier(yytext);
+    printf("Identifier: %s\n", yytext);
 }
 	YY_BREAK
 case 2:
-/* rule 2 can match eol */
 YY_RULE_SETUP
-#line 23 "replace.l"
-{ ECHO; }   // Print all other characters as-is
+#line 48 "arithmetic.l"
+{
+    strcpy(numbers[num_count++], yytext);
+    printf("Number: %s\n", yytext);
+}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 25 "replace.l"
+#line 53 "arithmetic.l"
+{
+    add_unique_operator(yytext);
+    printf("Operator: %s\n", yytext);
+}
+	YY_BREAK
+case 4:
+YY_RULE_SETUP
+#line 58 "arithmetic.l"
+{
+    add_unique_operator(yytext);
+    printf("Assignment: %s\n", yytext);
+}
+	YY_BREAK
+case 5:
+YY_RULE_SETUP
+#line 63 "arithmetic.l"
+; /* ignore whitespace */
+	YY_BREAK
+case 6:
+/* rule 6 can match eol */
+YY_RULE_SETUP
+#line 65 "arithmetic.l"
+{
+    return 0; /* End of input */
+}
+	YY_BREAK
+case 7:
+YY_RULE_SETUP
+#line 69 "arithmetic.l"
+{
+    printf("Invalid Character: %s\n", yytext);
+    valid_expression = 0;
+}
+	YY_BREAK
+case 8:
+YY_RULE_SETUP
+#line 74 "arithmetic.l"
 ECHO;
 	YY_BREAK
-#line 751 "lex.yy.c"
+#line 815 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1044,7 +1108,7 @@ static int yy_get_next_buffer (void)
 		while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 			{
 			yy_current_state = (int) yy_def[yy_current_state];
-			if ( yy_current_state >= 8 )
+			if ( yy_current_state >= 17 )
 				yy_c = yy_meta[yy_c];
 			}
 		yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
@@ -1072,11 +1136,11 @@ static int yy_get_next_buffer (void)
 	while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 		{
 		yy_current_state = (int) yy_def[yy_current_state];
-		if ( yy_current_state >= 8 )
+		if ( yy_current_state >= 17 )
 			yy_c = yy_meta[yy_c];
 		}
 	yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
-	yy_is_jam = (yy_current_state == 7);
+	yy_is_jam = (yy_current_state == 16);
 
 		return yy_is_jam ? 0 : yy_current_state;
 }
@@ -1752,37 +1816,56 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 25 "replace.l"
+#line 74 "arithmetic.l"
 
 
-int main(int argc, char *argv[]) {
-    if (argc < 3) {
-        printf("Usage: %s <word_to_find> <word_to_replace> [input_file]\n", argv[0]);
-        return 1;
-    }
-
-    strcpy(find_word, argv[1]);
-    strcpy(replace_word, argv[2]);
-
-    if (argc == 4) {
-        input_file = fopen(argv[3], "r");
-        if (!input_file) {
-            perror("Error opening file");
-            return 1;
-        }
-        yyin = input_file;
-    } else {
-        printf("Enter text (Ctrl+D to finish):\n");
-        yyin = stdin;
-    }
-
+int main(int argc, char **argv) {
+    printf("Enter an arithmetic expression: ");
+    
+    printf("\n--- Parsing Input ---\n");
     yylex();
+    
+    printf("\n--- Results ---\n");
+    
+    if (valid_expression) {
+        printf("✓ Expression parsing completed\n\n");
+    } else {
+        printf("✗ Invalid characters found in expression\n\n");
+    }
 
-    printf("\n\nTotal occurrences of '%s': %d\n", find_word, count);
+    if (id_count > 0) {
+        printf("Identifiers found (%d):\n", id_count);
+        for (int i = 0; i < id_count; i++) {
+            printf("  %d. %s\n", i+1, identifiers[i]);
+        }
+        printf("\n");
+    } else {
+        printf("No identifiers found.\n\n");
+    }
 
-    if (input_file) fclose(input_file);
+    if (op_count > 0) {
+        printf("Operators found (%d):\n", op_count);
+        for (int i = 0; i < op_count; i++) {
+            printf("  %d. %s\n", i+1, operators[i]);
+        }
+        printf("\n");
+    } else {
+        printf("No operators found.\n\n");
+    }
+
+    if (num_count > 0) {
+        printf("Numbers found (%d):\n", num_count);
+        for (int i = 0; i < num_count; i++) {
+            printf("  %d. %s\n", i+1, numbers[i]);
+        }
+        printf("\n");
+    } else {
+        printf("No numbers found.\n\n");
+    }
+
     return 0;
 }
 
-int yywrap() { return 1; }
-
+int yywrap() {
+    return 1;
+}
