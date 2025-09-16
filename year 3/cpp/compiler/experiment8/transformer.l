@@ -10,11 +10,27 @@ void yyerror(const char *s);
 "->"            { return ARROW; }
 "|"             { return PIPE; }
 ";"             { return SEMICOLON; }
+"("             {
+                    yylval.str = strdup(yytext);
+                    return TERMINAL;
+                }
+")"             {
+                    yylval.str = strdup(yytext);
+                    return TERMINAL;
+                }
+"+"             {
+                    yylval.str = strdup(yytext);
+                    return TERMINAL;
+                }
+"*"             {
+                    yylval.str = strdup(yytext);
+                    return TERMINAL;
+                }
 [A-Z]           { 
                     yylval.str = strdup(yytext); 
                     return NON_TERMINAL; 
                 }
-"e"             { /* Epsilon representation - Placed before general terminal rule */
+"#"             { /* Epsilon representation - Placed before general terminal rule */
                     yylval.str = strdup(yytext);
                     return TERMINAL;
                 }

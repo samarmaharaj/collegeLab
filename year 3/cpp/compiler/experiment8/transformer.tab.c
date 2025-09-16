@@ -84,7 +84,7 @@ void yyerror(const char *s);
 #define MAX_RULES 50
 #define MAX_PRODUCTIONS 20
 #define MAX_RHS_LEN 50
-#define EPSILON "e"
+#define EPSILON "#"
 
 typedef struct {
     char lhs;
