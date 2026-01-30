@@ -21,8 +21,8 @@ log_transformed = c * np.log(1 + img_float)
 # Specify the data type.
 log_transformed = np.array(log_transformed, dtype = np.uint8)
 
-# Save the output.
-cv2.imwrite('log_transformed.jpg', log_transformed)
+# # Save the output.
+# cv2.imwrite('log_transformed.jpg', log_transformed)
 
 # Display using matplotlib
 plt.figure(figsize=(10, 5))

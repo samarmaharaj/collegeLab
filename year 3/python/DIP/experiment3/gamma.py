@@ -27,8 +27,8 @@ for i, gamma in enumerate(gamma_values):
     # Apply gamma correction.
     gamma_corrected = np.array(255*(img / 255) ** gamma, dtype = 'uint8')
 
-    # Save edited images.
-    cv2.imwrite('gamma_transformed'+str(gamma)+'.jpg', gamma_corrected)
+    # # Save edited images.
+    # cv2.imwrite('gamma_transformed'+str(gamma)+'.jpg', gamma_corrected)
 
     # Plot the result
     plt.subplot(2, 3, i + 2)
