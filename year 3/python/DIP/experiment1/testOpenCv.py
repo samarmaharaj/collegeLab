@@ -15,5 +15,16 @@ if image is None:
 else:
     gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     cv2.imshow('Grayscale', gray_image)
+    # View a 5x5 matrix of pixels starting from (100, 100)
+    region = gray_image[100:105, 100:105]
+
+    print("Pixel values in the 5x5 region:")
+    print(region)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
+
+# # View a 5x5 matrix of pixels starting from (100, 100)
+# region = image[100:105, 100:105]
+
+# print("Pixel values in the 5x5 region:")
+# print(region)
